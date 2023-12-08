@@ -17,6 +17,8 @@ from django.contrib import admin
 from django.urls import path
 from things.views import home
 
+app_name = 'things'
+
 urlpatterns = [
     path('', home, name='home'),
     path('admin/', admin.site.urls),
