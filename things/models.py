@@ -11,12 +11,12 @@ class Thing(models.Model):
 
     def clean(self):
         if not self.name:
-            raise models.ValidationError("Name must not be blank")
+            raise ValidationError("Name must not be blank")
         elif len(self.name) > 30:
-            raise models.ValidationError("Name must consist of 30 characters or less")
+            raise ValidationError("Name must consist of 30 characters or less")
 
         if self.description and len(self.description) > 120:
-            raise models.ValidationError("Description must not have more than 120 characters")
+            raise ValidationError("Description must not have more than 120 characters")
 
         super().clean()
 
